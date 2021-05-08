@@ -1,0 +1,11 @@
+'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
+var router = require('express').Router();
+var middleware = require('../middleware').middleware;
+var _a = require("./movieService"), getOne = _a.getOne, getAll = _a.getAll, create = _a.create, update = _a.update, createReview = _a.createReview;
+router.get("/", middleware(false, getAll));
+router.get("/:id", middleware(false, getOne));
+router.post("/", middleware(false, create));
+router.put("/:id", middleware(false, update));
+router.post("/review", middleware(false, createReview));
+module.exports = router;
