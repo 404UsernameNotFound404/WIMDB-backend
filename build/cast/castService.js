@@ -52,7 +52,7 @@ var Constants = require('../constants').Constants;
 var getDB = require("../db").getDB;
 var ObjectID = require("mongodb").ObjectID;
 var collectionName = "cast";
-exports.getOne = function (req, res, username) { return __awaiter(void 0, void 0, void 0, function () {
+var getOne = function (req, res, username) { return __awaiter(void 0, void 0, void 0, function () {
     var db, id, following, cast, movies, user, peopleCastHasWorkedWith, frequentCalibrators, frequentCalibratorsFullData;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -98,7 +98,8 @@ exports.getOne = function (req, res, username) { return __awaiter(void 0, void 0
         }
     });
 }); };
-exports.getAll = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+exports.getOne = getOne;
+var getAll = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var db, casts;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -112,7 +113,8 @@ exports.getAll = function (req, res) { return __awaiter(void 0, void 0, void 0, 
         }
     });
 }); };
-exports.create = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+exports.getAll = getAll;
+var create = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var db, _a, name, birthdate, type;
     return __generator(this, function (_b) {
         switch (_b.label) {
@@ -140,7 +142,8 @@ exports.create = function (req, res) { return __awaiter(void 0, void 0, void 0, 
         }
     });
 }); };
-exports.update = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+exports.create = create;
+var update = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var db, _a, name, birthdate, type;
     return __generator(this, function (_b) {
         switch (_b.label) {
@@ -166,6 +169,7 @@ exports.update = function (req, res) { return __awaiter(void 0, void 0, void 0, 
         }
     });
 }); };
+exports.update = update;
 var checkCastData = function (_a) {
     var name = _a.name, birthdate = _a.birthdate, type = _a.type;
     try {

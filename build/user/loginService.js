@@ -41,7 +41,7 @@ var Constants = require('../constants').Constants;
 var _a = require("../db"), getDB = _a.getDB, initDB = _a.initDB;
 var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
-exports.login = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+var login = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var db, _a, password, username, user, token;
     return __generator(this, function (_b) {
         switch (_b.label) {
@@ -71,16 +71,18 @@ exports.login = function (req, res) { return __awaiter(void 0, void 0, void 0, f
         }
     });
 }); };
-exports.logout = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+exports.login = login;
+var logout = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         console.log("logging out");
         res.set({
-            "Set-Cookie": "token=deleted; Path=/",
+            "Set-Cookie": "token=deleted; Path=/", // erasing token
         }).status(Constants.httpStatus.OKAY).json({ data: { success: true } });
         return [2 /*return*/];
     });
 }); };
-exports.checkToken = function (req, res, username) { return __awaiter(void 0, void 0, void 0, function () {
+exports.logout = logout;
+var checkToken = function (req, res, username) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         if (!username)
             throw { code: Constants.httpStatus.BAD_REQUEST, message: "Not Logged In" };
@@ -88,3 +90,4 @@ exports.checkToken = function (req, res, username) { return __awaiter(void 0, vo
         return [2 /*return*/];
     });
 }); };
+exports.checkToken = checkToken;

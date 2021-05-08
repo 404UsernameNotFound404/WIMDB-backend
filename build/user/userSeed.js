@@ -39,7 +39,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.seedUsers = void 0;
 var bcrypt = require('bcrypt');
 var seedData = require('../seedScripts/seedScript').seedData;
-exports.seedUsers = function () { return __awaiter(void 0, void 0, void 0, function () {
+var seedUsers = function () { return __awaiter(void 0, void 0, void 0, function () {
     var users, _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
     var _l, _m, _o;
     return __generator(this, function (_p) {
@@ -88,3 +88,4 @@ exports.seedUsers = function () { return __awaiter(void 0, void 0, void 0, funct
         }
     });
 }); };
+exports.seedUsers = seedUsers;

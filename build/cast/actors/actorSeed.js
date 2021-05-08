@@ -41,7 +41,7 @@ var _a = require("../../db"), getDB = _a.getDB, initDB = _a.initDB;
 var seedData = require('../../seedScripts/seedScript').seedData;
 var ObjectID = require("mongodb").ObjectID;
 var collectionName = "cast";
-exports.seedActors = function (movies) { return __awaiter(void 0, void 0, void 0, function () {
+var seedActors = function (movies) { return __awaiter(void 0, void 0, void 0, function () {
     var db, createdActors, _a, _b, _c, _d, y;
     return __generator(this, function (_e) {
         switch (_e.label) {
@@ -83,3 +83,4 @@ exports.seedActors = function (movies) { return __awaiter(void 0, void 0, void 0
         }
     });
 }); };
+exports.seedActors = seedActors;

@@ -43,7 +43,7 @@ var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 var ObjectID = require("mongodb").ObjectID;
 // TODO move getDB to middle ware
-exports.get = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+var get = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var db, username, user, allMovies, genresToHaveReviewedFondly, recommendMovies;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -86,7 +86,8 @@ exports.get = function (req, res) { return __awaiter(void 0, void 0, void 0, fun
         }
     });
 }); };
-exports.getAll = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+exports.get = get;
+var getAll = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var db, users;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -108,7 +109,8 @@ exports.getAll = function (req, res) { return __awaiter(void 0, void 0, void 0, 
         }
     });
 }); };
-exports.removeFollower = function (req, res, userUsername) { return __awaiter(void 0, void 0, void 0, function () {
+exports.getAll = getAll;
+var removeFollower = function (req, res, userUsername) { return __awaiter(void 0, void 0, void 0, function () {
     var db, name, user, newFollowing;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -135,7 +137,8 @@ exports.removeFollower = function (req, res, userUsername) { return __awaiter(vo
         }
     });
 }); };
-exports.addFollower = function (req, res, userUsername) { return __awaiter(void 0, void 0, void 0, function () {
+exports.removeFollower = removeFollower;
+var addFollower = function (req, res, userUsername) { return __awaiter(void 0, void 0, void 0, function () {
     var db, name, user;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -164,3 +167,4 @@ exports.addFollower = function (req, res, userUsername) { return __awaiter(void 
         }
     });
 }); };
+exports.addFollower = addFollower;

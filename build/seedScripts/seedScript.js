@@ -39,7 +39,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.seedData = void 0;
 var bcrypt = require('bcrypt');
 var _a = require("../db"), getDB = _a.getDB, initDB = _a.initDB;
-exports.seedData = function (collection, data, clearData) { return __awaiter(void 0, void 0, void 0, function () {
+var seedData = function (collection, data, clearData) { return __awaiter(void 0, void 0, void 0, function () {
     var db, createdDocument;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -59,3 +59,4 @@ exports.seedData = function (collection, data, clearData) { return __awaiter(voi
         }
     });
 }); };
+exports.seedData = seedData;

@@ -41,7 +41,7 @@ var Constants = require('../constants').Constants;
 var getDB = require("../db").getDB;
 var ObjectID = require("mongodb").ObjectID;
 var collectionName = "movies";
-exports.getOne = function (req, res, username) { return __awaiter(void 0, void 0, void 0, function () {
+var getOne = function (req, res, username) { return __awaiter(void 0, void 0, void 0, function () {
     var db, id, movie, cast, similarMovies, allMovies;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -91,7 +91,8 @@ exports.getOne = function (req, res, username) { return __awaiter(void 0, void 0
         }
     });
 }); };
-exports.getAll = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+exports.getOne = getOne;
+var getAll = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var db, movies;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -105,7 +106,8 @@ exports.getAll = function (req, res) { return __awaiter(void 0, void 0, void 0, 
         }
     });
 }); };
-exports.create = function (req, res, username) { return __awaiter(void 0, void 0, void 0, function () {
+exports.getAll = getAll;
+var create = function (req, res, username) { return __awaiter(void 0, void 0, void 0, function () {
     var db, _a, title, releaseDate, runTime, genre, plot, cast, _b;
     return __generator(this, function (_c) {
         switch (_c.label) {
@@ -138,7 +140,8 @@ exports.create = function (req, res, username) { return __awaiter(void 0, void 0
         }
     });
 }); };
-exports.update = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+exports.create = create;
+var update = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var db, id, _a, title, releaseDate, runTime, genre, plot, cast, _b, movieToUpdate;
     return __generator(this, function (_c) {
         switch (_c.label) {
@@ -178,7 +181,8 @@ exports.update = function (req, res) { return __awaiter(void 0, void 0, void 0, 
         }
     });
 }); };
-exports.createReview = function (req, res, username) { return __awaiter(void 0, void 0, void 0, function () {
+exports.update = update;
+var createReview = function (req, res, username) { return __awaiter(void 0, void 0, void 0, function () {
     var db, _a, summary, fullTextReview, rating, movieID, movie, avgRating;
     return __generator(this, function (_b) {
         switch (_b.label) {
@@ -210,6 +214,7 @@ exports.createReview = function (req, res, username) { return __awaiter(void 0, 
         }
     });
 }); };
+exports.createReview = createReview;
 var isValidDate = function (dateString) {
     var date = new Date(dateString);
     return date instanceof Date && !isNaN(date.getTime());

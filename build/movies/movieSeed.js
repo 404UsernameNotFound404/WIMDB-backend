@@ -39,7 +39,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.seedMovies = void 0;
 var seedData = require('../seedScripts/seedScript').seedData;
 var collectionName = "movies";
-exports.seedMovies = function () { return __awaiter(void 0, void 0, void 0, function () {
+var seedMovies = function () { return __awaiter(void 0, void 0, void 0, function () {
     var createdMovies, _a, _b, _c, _d;
     return __generator(this, function (_e) {
         switch (_e.label) {
@@ -85,3 +85,4 @@ exports.seedMovies = function () { return __awaiter(void 0, void 0, void 0, func
         }
     });
 }); };
+exports.seedMovies = seedMovies;
