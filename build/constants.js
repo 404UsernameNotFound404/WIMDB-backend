@@ -8,5 +8,5 @@ exports.Constants = {
         SERVER_ERROR: 500,
         FORBIDDEN: 403
     },
-    WEBTOKENSECRET: "SHHHHHHHHHHHHHHHHHHH" // jsonWebTokenSecret should come from env, but I don't want to make you create an env file
+    WEBTOKENSECRET: "SHHHHHHHHHHHHHHHHHHH" // jsonWebTokenSecret should come from env if you are using in production
 };
